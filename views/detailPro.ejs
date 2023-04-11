@@ -1,25 +1,40 @@
-<link rel="stylesheet" href="/css/detailPro.css">
+<link rel="stylesheet" href="/stylesheets/home.css">
+<link rel="stylesheet" href="/stylesheets/listPro.css">
+<div class="container">
 
-<div class="detail">
-  <div class="main-detail">
-      <div class="main-detail-img">
-          <div class="main-detail-img-main">
-              <img src="/imgs/<%=product.pro_img %>" alt="">
-          </div>
-          <div class="main-detail-img-detail">
-            
-          </div>
-      </div>
-      <div class="main-detail-infor">
-          <p class="detail-name"><%= product.pro_name %></p>
-          <p class="detail-price"><%= product.pro_price %></p>
-          <p class="detail-amount">Amount in here hoho</p>
-          <p class="detail-short-infor"><%= product.pro_description %> </p>
-          <!-- <div class="detail-button">
-              <p class="add-cart">Add cart</p>
-              <p class="buy-now">Buy now</p>
-          </div> -->
-          
-      </div>
-  </div>
+    <div class="content_products" id="show">
+        <div class="content_product_introduction">
+            <h1>Chi tiết sp.</h1>
+            <p>Sth in here, maybe some introduction</p>
+        </div>
+        <div id="detail_products"></div>
+        <script>
+            fetch('http://localhost:3000/products/<%=pro_id%>') //cat_id lấy bên router category
+            .then (res => res.json())
+            .then (data => {
+                console.log(data);
+                let detail_products = document.getElementById('detail_products');
+                data.forEach(products => {
+                    detail_products.innerHTML += `
+                        <a href="/product/${products.pro_id}">
+                            <div class="main-item">
+                                <div class="item"> 
+                                    <img src="/imgs/${products.pro_img}" alt="">
+                                    <p class="pro-name">${products.pro_name}</p>
+                                    <p class="pro-price">${products.pro_price.toLocaleString('en-US',{style: "currency",currency: "USD",currencySign: "accounting"})}</p>
+                                </div>
+                            </div>
+                        </a>
+                    `;
+                })
+            })
+        </script>
+    </div>
+
+    
+
+    
+
 </div>
+
+

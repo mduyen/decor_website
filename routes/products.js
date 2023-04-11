@@ -27,14 +27,14 @@ router.get('/hotproducts', function(req, res, next) {
   });
 });
 
-// router.get('/:id', function(req, res, next) {
-//   let id = req.params.id;
-//   db.query(`select * from product where pro_id=${id}`, 
-//   (err, data) => {
-//     if (err) throw err;
-//     res.json(data);
-//   });
-// });
+router.get('/:pro_id', (req, res,) => {
+  let id = req.params.pro_id;
+  db.query(`select * from product where pro_id=${id}`, 
+  (err, data) => {
+    if (err) throw err;
+    res.json(data);
+  });
+});
 
 router.get('/category/:cat_id', (req, res) => {
   let id = req.params.cat_id;
