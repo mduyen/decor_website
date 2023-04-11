@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/admin/signup.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+</head>
+<body>
+    <div class="login">
+        <div class="login_content">
+            <form action="/users/save/" method="post">
+                <h1>Sign up</h1>
+                <p>Welcome to ddecorr.co</p>
+                <div class="infor">
+                    <div class="infor_name">
+                        <label for="">Full name</label> 
+                        <input name="user_fullname" type="text">
+                    </div>
+                    <div class="infor_name">
+                        <label for="">User name</label>
+                        <input name="username" type="text">
+                    </div>
+                </div>
+                <label for="">Password</label>
+                <input name="user_password" type="password">
+                <label for="">Phone</label>
+                <input name="user_phone" type="number">
+                <label for="">Email</label>
+                <input name="user_email" type="email">
+                <label for="">Address</label>
+                <input name="user_address" type="text">
+
+                <div class="form_signup">
+                    <button type="submit">Sign up</button>
+                    <div class="line"></div>
+                    <p class="signup">Have a acount ? <a href="">Login</a></p>
+                </div>
+                
+            </form>
+        </div>
+        
+    </div>
+</body>
+</html>

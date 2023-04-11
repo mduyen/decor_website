@@ -1,0 +1,9 @@
+<body>
+    <h1>Download Page</h1>
+    <% if (un) { %>
+        <p>Welcome <%= un %>!</p>
+    <% } else { %>
+        <p>Please log in to download.</p>
+    <% } %>
+    <a href="/download/file">Download File</a>
+</body>

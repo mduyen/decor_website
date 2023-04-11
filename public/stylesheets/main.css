@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Sulphur Point';
+    font-weight: 1rem;
+    list-style: none;
+    text-decoration: none;
+}
+:root{
+    --background-white: #ffffff;
+    --background-black: #000000;
+    --background-strong-brown: #b0927e;
+    --main-background: #f4f0ed;
+    --nav-background: #eee9e67b;
+    --cover: rgba(0, 0, 0, 0.564);
+    --text-white: #fff;
+    --text-link-b: rgb(94, 94, 94);
+    --text-link-logo: rgb(75, 75, 75);
+    --text-link-white: rgb(184, 184, 184);
+    --text-strong-brown: #867369;
+    --text-brown: #463e3a;
+    --text-black: rgb(37, 37, 37);
+    --text-red: #b56969;
+    --line: #ccb3a2;
+    --line-blue: #98a8b9;
+    
+    --light-blue:  #cccfd3;
+    --strong-blue: #98a8b9;
+    --strong-brown: #b0927e;
+    
+}
+html{
+    font-size: 62,5%;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar{
+    width: 0.8rem;
+}
+::-webkit-scrollbar-track{
+    background: #ded0c7;
+    border-radius: 50px;
+}
+::-webkit-scrollbar-thumb{
+    background: #718090;
+    border-radius: 50px;
+}
+
+header{
+    width: 100vw;
+    height: 55vh;
+    position: relative;
+    background-image: url(https://i.pinimg.com/originals/7e/db/0d/7edb0dde44f7f58b5f05e0a15ef482a0.jpg);
+    background-position: 0px -400px;
+}
+
+.header-main{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.header-main img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+}
+.cover-banner{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--cover);
+}
+nav{
+    width: 100%;
+    height: 4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background-attachment: fixed; */
+}
+.nav-logo{
+    font-family: 'Satisfy';
+    color: var(--text-link-white);
+    font-size: 2.3rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 5%;
+}
+.nav-content{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 2%;
+}
+.nav-menu{
+    display: flex;
+}
+
+.nav-menu li a{
+    padding: 0 1.5rem;
+    color: var(--text-link-white);
+    font-family: 'Sulphur Point';
+    font-weight: bold;
+}
+ion-icon{
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+/* product */
+.main-content{
+    width: 90%;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem 3rem;
+}
+
+.main-item{
+    width: 11rem;
+    height: 11.5rem;
+}
+.main-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+.pro-name{
+    color: var(--text-strong-brown);
+    font-weight:  bold;
+    font-size: 1.1rem;
+}
+.pro-price{
+    color: var(--text-black);
+}
+
+/* footer */
+footer{
+    width: 100%;
+    height: 45vh;
+    /* background-color: var(--main-background); */
+}
+.footer-content{
+    width: 100%;
+    height: 100%;
+}
+.line-blue{
+    width: 100%;
+    height: 2px;
+    border-top: 1.5px solid var(--strong-blue);
+}
+.line-white{
+    width: 100%;
+    height: 2px;
+    border-top: 1.5px solid var(--line);
+}
+.footer-content-menu{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-content-menu a{
+    color: var(--strong-brown);
+    padding: 0 2rem;
+}
+.footer-content-social{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-content-social ion-icon{
+    padding: 0 2rem;
+    font-size: 1rem;
+}
+.footer-content-teams{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-content-teams p{
+    color: var(--strong-brown);
+}
+
+.footer-content-copyright{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

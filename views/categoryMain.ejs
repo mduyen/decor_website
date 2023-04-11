@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="/stylesheets/home.css">
+<link rel="stylesheet" href="/stylesheets/listPro.css">
+
+<div class="container">
+
+    <div class="content_products" id="show">
+        <div class="content_product_introduction">
+            <h1>Sp trong loại.</h1>
+            <p>Sth in here, maybe some introduction</p>
+        </div>
+        <div id="cat_products"></div>
+        <script>
+            fetch('http://localhost:3000/products/category/<%=cat_id%>') //cat_id lấy bên router category
+            .then (res => res.json())
+            .then (data => {
+                console.log(data);
+                let cat_products = document.getElementById('cat_products');
+                data.forEach(products => {
+                    cat_products.innerHTML += `
+                        <a href="/product/${products.pro_id}">
+                            <div class="main-item">
+                                <div class="item"> 
+                                    <img src="/imgs/${products.pro_img}" alt="">
+                                    <p class="pro-name">${products.pro_name}</p>
+                                    <p class="pro-price">${products.pro_price.toLocaleString('en-US',{style: "currency",currency: "USD",currencySign: "accounting"})}</p>
+                                </div>
+                            </div>
+                        </a>
+                    `;
+                })
+            })
+        </script>
+    </div>
+
+    
+
+    
+
+</div>
+
+
+
+
+
+<!-- <div id="view_products"></div>
+  <script>
+    fetch('http://localhost:3000/products/viewproducts/')
+    .then (res => res.json())
+    .then (data => {
+        console.log(data);
+        let view_products = document.getElementById('view_products');
+        data.forEach(products => {
+            view_products.innerHTML += `
+                <a href="/product/${products.pro_id}">
+                    <div class="main-item">
+                        <div class="item"> 
+                            <img src="/imgs/${products.pro_img}" alt="">
+                            <p class="pro-name">${products.pro_name}</p>
+                            <p class="pro-price">${products.pro_price.toLocaleString('en-US',{style: "currency",currency: "USD",currencySign: "accounting"})}</p>
+                        </div>
+                    </div>
+                </a>
+            `;
+        })
+    })
+  </script>
+</div> -->
+
+
+

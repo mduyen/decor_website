@@ -1,0 +1,126 @@
+.login{
+    width: 100%;
+    height: 100%;
+}
+.login_content{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(https://i.pinimg.com/originals/68/14/5c/68145cbad26e9ce6632394b6a75896e1.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+form{
+    width: 40%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.443);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: aliceblue;
+}
+form h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    height: 15%;
+} 
+form p{
+    font-family: 'Satisfy';
+    display: flex;
+    justify-content: center;
+    height: 10%;
+    font-size: 1.3rem;
+}
+form .infor{
+   display: flex;
+   width: 69%;
+}
+form .infor .infor_name{
+    width: 100%;
+    margin: 0 10px;
+}
+form label{
+    width: 65%;
+    padding: 8px 0;
+}
+form input{
+    width: 65%;
+    height: 35px;
+    background: none;
+    border: 1px solid rgb(0, 0, 0);
+    outline: none;
+    color: var(--text-white);
+    padding: 5px;
+    font-size: 1rem;
+}
+form .gender{
+   width: 82%;
+}
+form .infor .infor_name input{
+    display: block;
+    height: 35px;
+    width: 100%;
+    background: none;
+    border: 1px solid rgb(0, 0, 0);
+    outline: none;
+    padding: 5px;
+    font-size: 1rem;
+    color: var(--text-white);
+}
+form .form_signup{
+    width: 100%;
+    height: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+form .form_signup button{
+    width: 65%;
+    height: 40px;
+    border: none;
+    background-color: var(--background-black);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.5s;
+    color: var(--text-white);
+    margin-bottom: 20px;
+}
+form button:hover{
+    background-color: var(--line);
+}
+form .form_signup .line{
+    height: 5%;
+    border-bottom: 1px solid var(--background-black);
+    width: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form .form_signup .signup{
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Sulphur Point';
+    font-size: 0.9rem;
+}
+form .signup a{
+    font-weight: bold;
+    color: black;
+    padding-left: 10px;
+    transition: 0.5s;
+}
+form .signup a:hover{
+    font-weight: bold;
+    color: var(--strong-brown);
+    padding-left: 10px;
+}

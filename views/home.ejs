@@ -1,0 +1,130 @@
+<link rel="stylesheet" href="/stylesheets/home.css">
+<link rel="stylesheet" href="/stylesheets/listPro.css">
+
+<div class="container">
+
+    <div class="content_products" id="show">
+        <div class="content_product_introduction">
+            <h1>Hot Product.</h1>
+            <p>Sth in here, maybe some introduction</p>
+        </div>
+        <div id="hot_products"></div>
+        <script>
+            fetch('http://localhost:3000/products/hotproducts/')
+            .then (res => res.json())
+            .then (data => {
+                console.log(data);
+                let hot_products = document.getElementById('hot_products');
+                data.forEach(products => {
+                    hot_products.innerHTML += `
+                        <a href="/product/${products.pro_id}">
+                            <div class="main-item">
+                                <div class="item"> 
+                                    <img src="/imgs/${products.pro_img}" alt="">
+                                    <p class="pro-name">${products.pro_name}</p>
+                                    <p class="pro-price">${products.pro_price.toLocaleString('en-US',{style: "currency",currency: "USD",currencySign: "accounting"})}</p>
+                                </div>
+                            </div>
+                        </a>
+                    `;
+                })
+            })
+        </script>
+        
+    </div>
+
+    <div class="content_products" id="show">
+        <div class="content_product_introduction">
+          <h1>New Product.</h1>
+          <p>Sth in here, maybe some introduction</p>
+        </div>
+        <div id="new_products"></div>
+        <script>
+          fetch('http://localhost:3000/products/newproducts/')
+          .then (res => res.json())
+          .then (data => {
+              console.log(data);
+              let new_products = document.getElementById('new_products');
+              data.forEach(products => {
+                  new_products.innerHTML += `
+                      <a href="/product/${products.pro_id}">
+                          <div class="main-item">
+                              <div class="item"> 
+                                  <img src="/imgs/${products.pro_img}" alt="">
+                                  <p class="pro-name">${products.pro_name}</p>
+                                  <p class="pro-price">${products.pro_price.toLocaleString('en-US',{style: "currency",currency: "USD",currencySign: "accounting"})}</p>
+                                  <p class="pro-date">${products.date_add.toLocaleString('en-US', {dateStyle: "long"})}</p>
+                              </div>
+                          </div>
+                      </a>
+                  `;
+              })
+          })
+        </script>
+    </div>
+
+    <div class="content_products" id="show">
+    <div class="content_product_introduction">
+        <h1>View Product.</h1>
+        <p>Sth in here, maybe some introduction</p>
+    </div>
+    <div id="view_products"></div>
+    <script>
+        fetch('http://localhost:3000/products/viewproducts/')
+        .then (res => res.json())
+        .then (data => {
+            console.log(data);
+            let view_products = document.getElementById('view_products');
+            data.forEach(products => {
+                view_products.innerHTML += `
+                    <a href="/product/${products.pro_id}">
+                        <div class="main-item">
+                            <div class="item"> 
+                                <img src="/imgs/${products.pro_img}" alt="">
+                                <p class="pro-name">${products.pro_name}</p>
+                                <p class="pro-price">${products.pro_price.toLocaleString('en-US',{style: "currency",currency: "USD",currencySign: "accounting"})}</p>
+                                <p class="pro-view">Views: ${products.views}</p>
+                            </div>
+                        </div>
+                    </a>
+                `;
+            })
+        })
+    </script>
+    
+    </div>
+
+    
+
+</div>
+
+
+
+
+
+<!-- <div id="view_products"></div>
+  <script>
+    fetch('http://localhost:3000/products/viewproducts/')
+    .then (res => res.json())
+    .then (data => {
+        console.log(data);
+        let view_products = document.getElementById('view_products');
+        data.forEach(products => {
+            view_products.innerHTML += `
+                <a href="/product/${products.pro_id}">
+                    <div class="main-item">
+                        <div class="item"> 
+                            <img src="/imgs/${products.pro_img}" alt="">
+                            <p class="pro-name">${products.pro_name}</p>
+                            <p class="pro-price">${products.pro_price.toLocaleString('en-US',{style: "currency",currency: "USD",currencySign: "accounting"})}</p>
+                        </div>
+                    </div>
+                </a>
+            `;
+        })
+    })
+  </script>
+</div> -->
+
+
+

@@ -1,0 +1,12 @@
+nav{
+    border-bottom: 1.5px solid var(--line);
+    background-color: var(--cover);
+    position: fixed;
+}
+.nav-menu li a{
+    color: var(--text-white);
+}
+.nav-logo{
+    color: var(--text-white);
+}
+
