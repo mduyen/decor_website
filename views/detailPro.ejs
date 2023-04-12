@@ -1,10 +1,10 @@
 <link rel="stylesheet" href="/stylesheets/home.css">
 <link rel="stylesheet" href="/stylesheets/listPro.css">
+<link rel="stylesheet" href="/css/detailPro.css">
 <div class="container">
-
     <div class="content_products" id="show">
         <div class="content_product_introduction">
-            <h1>Chi tiết sp.</h1>
+            <h1>Detail Product.</h1>
             <p>Sth in here, maybe some introduction</p>
         </div>
         <div id="detail_products"></div>
@@ -17,11 +17,22 @@
                 data.forEach(products => {
                     detail_products.innerHTML += `
                         <a href="/product/${products.pro_id}">
-                            <div class="main-item">
-                                <div class="item"> 
-                                    <img src="/imgs/${products.pro_img}" alt="">
-                                    <p class="pro-name">${products.pro_name}</p>
-                                    <p class="pro-price">${products.pro_price.toLocaleString('en-US',{style: "currency",currency: "USD",currencySign: "accounting"})}</p>
+                            <div class="detail">
+                                <div class="detail-img">
+                                    <img src="${products.pro_img}" alt="">
+                                </div>
+                                <div class="detail-item"> 
+                                    <p class="pro-name-detail">${products.pro_name}</p>
+                                    <div class="detail_item_price">
+                                        <p class="pro-price-detail">${products.pro_price.toLocaleString('en-US',{style: "currency",currency: "USD",currencySign: "accounting"})}</p>
+                                        <p class="pro_dis-detail">${products.pro_discount.toLocaleString('en-US',{style: "currency",currency: "USD",currencySign: "accounting"})}</p>
+                                    </div>
+                                    <p class="pro-in">${products.pro_description}</p>
+                                    <p class="pro-view">Views: ${products.views}</p>
+                                    <div class="btn-buy">
+                                        <button class="add-cart">Add cart</button>
+                                        <button class="buy-now">Buy now</button>
+                                    </div>
                                 </div>
                             </div>
                         </a>
@@ -30,11 +41,6 @@
             })
         </script>
     </div>
-
-    
-
-    
-
 </div>
 
 

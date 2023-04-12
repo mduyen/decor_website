@@ -23,12 +23,16 @@
     justify-content: center;
     flex-direction: column;
 }
+/* .content_products-shop{
+    margin: 10rem 0;
+} */
 .content_products h1{
     font-size: 2rem;
 }
 #new_products, #view_products, #hot_products, #cat_products{
     width: 90vw;
     height: 22rem;
+    /* height: auto; */
     display: grid;
     grid-auto-flow: column;
     scroll-behavior: auto;
@@ -38,9 +42,25 @@
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
 }
+#shop_products{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 5rem 2rem;
+    
+}
 .main-item {
     margin: 0 2rem;
 }
+/* .main-item-shop{
+    width: 100%;
+    height: 10rem;
+    background-color: antiquewhite;
+} */
+    /* display: grid;
+    grid-template-columns: auto auto auto auto; */
+    
 
 #new_products::-webkit-scrollbar, #view_products::-webkit-scrollbar, #hot_products::-webkit-scrollbar, #cat_products::-webkit-scrollbar{
     display: none;
@@ -50,8 +70,98 @@
     height: 200px;
     scroll-snap-align: start; 
 }
+.item-shop{
+    width: 230px;
+    height: 200px;
+}
 
-.item img{
+.item-shop img{
     width: 100%;
     height: 100%;
+}
+.detail{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.detail-img{
+    width: 450px;
+    height: 500px;
+}
+.detail-img img{
+    width: 100%;
+    height: 100%;
+    
+}
+.detail-item{
+    width: 50%;
+    font-size: 1.1rem;
+    color: var(--text-black);
+    display: flex;
+    flex-direction: column;
+}
+.pro-name-detail{
+    width: 100%;
+    height: 4rem;
+    font-size: 1.5rem;
+}
+.pro-name{
+    width: 100%;
+ 
+    font-size: 1.5rem;
+}
+.detail_item_price{
+    display: flex;
+    width: 100%;
+    height: 5rem;
+    font-size: 1.3rem;
+}
+
+.pro-price{
+    font-weight: bold;
+    text-decoration-line: line-through;
+    padding-right: 10px;
+    
+    
+}
+.pro_dis{
+    font-weight: bold;
+    color: var(--text-black);
+    font-size: 1.2rem;
+}
+.pro-price-detail{
+    font-weight: bold;
+    text-decoration-line: line-through;
+    padding-right: 10px;
+    font-size: 2rem;
+}
+.pro_dis-detail{
+    font-weight: bold;
+}
+
+.pro-in{
+    width: 100%;
+    height: auto;
+}
+
+.pro-view{
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+.btn-buy button{
+    width: 7rem;
+    height: 3rem;
+    background-color: var(--background-strong-brown);
+    color: var(--text-white);
+    border: none;
+    font-size: 1.1rem;
+    transition: 0.5s;
+}
+.btn-buy button:hover{
+    background-color: rgb(252, 252, 252);
+    color: var(--background-strong-brown);
+    border: 1.5px solid var(--background-strong-brown);
 }

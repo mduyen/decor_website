@@ -20,9 +20,10 @@
                         <a href="/product/${products.pro_id}">
                             <div class="main-item">
                                 <div class="item"> 
-                                    <img src="/imgs/${products.pro_img}" alt="">
+                                    <img src="${products.pro_img}" alt="">
                                     <p class="pro-name">${products.pro_name}</p>
                                     <p class="pro-price">${products.pro_price.toLocaleString('en-US',{style: "currency",currency: "USD",currencySign: "accounting"})}</p>
+                                    <p class="pro_dis">${products.pro_discount.toLocaleString('en-US',{style: "currency",currency: "USD",currencySign: "accounting"})}</p>
                                 </div>
                             </div>
                         </a>
@@ -31,11 +32,6 @@
             })
         </script>
     </div>
-
-    
-
-    
-
 </div>
 
 

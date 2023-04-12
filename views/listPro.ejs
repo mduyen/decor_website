@@ -1,20 +1,73 @@
-<link rel="stylesheet" href="/stylesheets/listPro.css">
+<!-- <link rel="stylesheet" href="/stylesheets/home.css">  -->
+<!-- <link rel="stylesheet" href="/stylesheets/listPro.css"> -->
+<link rel="stylesheet" href="/stylesheets/test.css">
 
-<div class="header-content">
-  <h3>Product.</h3>
-  <p>
-      <a href="">All</a>
-      
-
-
-  </p>
+<div class="container">
+  <div class="content_products-shop" id="show">
+    <div class="content_product_introduction">
+      <h1>Shop Product.</h1>
+      <p>Sth in here, maybe some introduction</p>
+    </div>
+    <div id="shop_products"></div>
+    <script>
+      fetch('http://localhost:3000/products/newproducts/')
+      .then (res => res.json())
+      .then (data => {
+          console.log(data);
+          let shop_products = document.getElementById('shop_products');
+          data.forEach(products => {
+              shop_products.innerHTML += `
+              <a href="/product/${products.pro_id}">
+                        <div class="main-item-shop">
+                            <div class="item-shop"> 
+                                <img src="${products.pro_img}" alt="">
+                                <p class="pro-name">${products.pro_name}</p>
+                                <div class="detail_item_price">
+                                    <p class="pro-price">${products.pro_price.toLocaleString('en-US',{style: "currency",currency: "USD",currencySign: "accounting"})}</p>
+                                    <p class="pro_dis">${products.pro_discount.toLocaleString('en-US',{style: "currency",currency: "USD",currencySign: "accounting"})}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+              `;
+          })
+      })
+    </script>
+</div>
 </div>
 
 
 
-<!-- <div class="main-content">
-  aaaaa
+
+
+<!-- <div id="view_products"></div>
+  <script>
+    fetch('http://localhost:3000/products/viewproducts/')
+    .then (res => res.json())
+    .then (data => {
+        console.log(data);
+        let view_products = document.getElementById('view_products');
+        data.forEach(products => {
+            view_products.innerHTML += `
+                <a href="/product/${products.pro_id}">
+                    <div class="main-item">
+                        <div class="item"> 
+                            <img src="/imgs/${products.pro_img}" alt="">
+                            <p class="pro-name">${products.pro_name}</p>
+                            <p class="pro-price">${products.pro_price.toLocaleString('en-US',{style: "currency",currency: "USD",currencySign: "accounting"})}</p>
+                        </div>
+                    </div>
+                </a>
+            `;
+        })
+    })
+  </script>
 </div> -->
+
+
+
+
+
 
 
 

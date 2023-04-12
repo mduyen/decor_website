@@ -117,12 +117,12 @@ router.post("/changepassword", async function (req, res) {
       var pass_mahoa = bcrypt.hashSync(newPass, salt);
       sql = 'UPDATE user SET user_password = ? WHERE username = ?';
       await db.query(sql, [pass_mahoa, u]);
-      res.redirect("/users/thanhcong1");
+      res.redirect("/");
   });
 });
-router.get('/thanhcong1', function(req, res){
-  res.render("thanhcong1");
-});
+// router.get('/thanhcong1', function(req, res){
+//   res.render("thanhcong1");
+// });
 
 
 // router.get('/success', (req, res)=>{
@@ -151,7 +151,68 @@ router.get('/signout', (req, res)=>{
 })
 
 
+// router.get('/forgot-password', (req, res) => {
+//   res.render('forgot-password');
+// })
 
+// const bcrypt = require('bcryptjs');
+
+// router.post('/forgot-password', (req, res) => {
+//   const { email } = req.body;
+
+//   // Kiểm tra xem email có tồn tại trong cơ sở dữ liệu hay không
+//   User.findOne({ user_email }, (err, user) => {
+//     if (err || !user) {
+//       return res.status(400).json({ error: 'Email not found' });
+//     }
+
+//     // Tạo mật khẩu mới cho người dùng
+//     const newPassword = Math.random().toString(36).slice(-8);
+
+//     // Hash mật khẩu mới và lưu vào cơ sở dữ liệu
+//     bcrypt.genSalt(10, (err, salt) => {
+//       if (err) throw err;
+//       bcrypt.hash(newPassword, salt, (err, hash) => {
+//         if (err) throw err;
+//         user.password = hash;
+//         user.save((err) => {
+//           if (err) throw err;
+//           // Gửi email chứa mật khẩu mới đến người dùng
+//           // ...
+//           res.json({ message: 'Password reset successful' });
+//         });
+//       });
+//     });
+//   });
+// });
+
+// const nodemailer = require('nodemailer');
+
+// // Tạo một đối tượng transporter để gửi email
+// const transporter = nodemailer.createTransport({
+//   service: 'gmail',
+//   auth: {
+//     user: 'your-email@gmail.com',
+//     pass: 'your-password'
+//   }
+// });
+
+// // Chuẩn bị nội dung email
+// const mailOptions = {
+//   from: 'your-email@gmail.com',
+//   to: user_email,
+//   subject: 'Password Reset',
+//   text: `Your new password is: ${newPassword}`
+// };
+
+// // Gửi email
+// transporter.sendMail(mailOptions, (err, info) => {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log(`Email sent: ${info.response}`);
+//   }
+// });
 
 
 
